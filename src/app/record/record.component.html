@@ -1,59 +1,62 @@
 <div class="container mt-4">
   <div class="card">
-    <h1>Student Registation</h1>
+    <div class="card-header">New or Update Records</div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input
+            type="text"
+            [(ngModel)]="name"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="name"
+            placeholder="Enter Name"
+          />
+        </div>
 
-    <form>
-      <div class="form-group">
-        <label>Name</label>
-        <input
-          type="text"
-          [(ngModel)]="name"
-          [ngModelOptions]="{ standalone: true }"
-          class="form-control"
-          id="name"
-          placeholder="Enter Name"
-        />
-      </div>
+        <div class="form-group">
+          <label>age</label>
+          <input
+            type="number"
+            [(ngModel)]="age"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="age"
+            placeholder="Enter age"
+          />
+        </div>
 
-      <div class="form-group">
-        <label>age</label>
-        <input
-          type="number"
-          [(ngModel)]="age"
-          [ngModelOptions]="{ standalone: true }"
-          class="form-control"
-          id="age"
-          placeholder="Enter age"
-        />
-      </div>
+        <div class="form-group">
+          <label>gender</label>
+          <input
+            type="text"
+            [(ngModel)]="gender"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="gender"
+            placeholder="Enter Gender"
+          />
+        </div>
 
-      <div class="form-group">
-        <label>gender</label>
-        <input
-          type="text"
-          [(ngModel)]="gender"
-          [ngModelOptions]="{ standalone: true }"
-          class="form-control"
-          id="gender"
-          placeholder="Enter Gender"
-        />
-      </div>
-
-      <button type="submit" class="btn btn-primary mt-4" (click)="save()">
-        Submit
-      </button>
-    </form>
+        <button type="submit" class="btn btn-primary mt-4" (click)="save()">
+          Submit
+        </button>
+      </form>
+    </div>
   </div>
-  <div>
-    <div class="container mt-4">
-      <h1>Student</h1>
+</div>
 
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">Records</div>
+    <div class="card-body">
       <table class="table">
         <thead>
           <h1 *ngIf="!isResultLoaded">Loading.................</h1>
 
           <tr>
-            <th scope="col">ID</th>
+            <!-- <th scope="col">ID</th> -->
             <th scope="col">Name</th>
             <th scope="col">age</th>
             <th scope="col">gender</th>
@@ -62,7 +65,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let StudentItem of RecordArray">
-            <th scope="row">{{ StudentItem.id }}</th>
+            <!-- <th scope="row">{{ StudentItem.id }}</th> -->
             <td>{{ StudentItem.name | uppercase }}</td>
             <td>{{ StudentItem.age }}</td>
             <td>{{ StudentItem.gender }}</td>

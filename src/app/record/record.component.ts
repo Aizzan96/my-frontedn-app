@@ -14,7 +14,7 @@ export class RecordComponent {
   age: Number = 0;
   gender: string = '';
 
-  currentStudentID = '';
+  recordID = '';
   constructor(private http: HttpClient) {
     this.getAllRecord();
   }
@@ -42,7 +42,7 @@ export class RecordComponent {
       })
       .subscribe((resultData: any) => {
         console.log(resultData);
-        alert('Student Registered Successfully');
+        alert('Records Registered Successfully');
         this.getAllRecord();
         this.name = '';
         this.age = 0;
@@ -53,12 +53,12 @@ export class RecordComponent {
     this.name = data.name;
     this.age = data.age;
     this.gender = data.gender;
-    this.currentStudentID = data.id;
+    this.recordID = data.id;
   }
 
   UpdateRecords() {
     let bodyData = {
-      id: this.currentStudentID,
+      id: this.recordID,
       name: this.name,
       age: this.age,
       gender: this.gender,
@@ -71,9 +71,9 @@ export class RecordComponent {
       )
       .subscribe((resultData: any) => {
         console.log(resultData);
-        alert('Student Registered Updateddd');
+        alert('Record Updated');
         this.getAllRecord();
-        this.currentStudentID = '';
+        this.recordID = '';
         this.name = '';
         this.age = 0;
         this.gender = '';
@@ -81,7 +81,7 @@ export class RecordComponent {
   }
 
   save() {
-    if (this.currentStudentID == '') {
+    if (this.recordID == '') {
       this.register();
     } else {
       this.UpdateRecords();
@@ -95,9 +95,9 @@ export class RecordComponent {
       })
       .subscribe((resultData: any) => {
         console.log(resultData);
-        alert('Student Deleteddd');
+        alert('Record Deleted');
         this.getAllRecord();
-        this.currentStudentID = '';
+        this.recordID = '';
         this.name = '';
         this.age = 0;
         this.gender = '';
