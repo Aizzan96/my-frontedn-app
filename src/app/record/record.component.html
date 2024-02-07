@@ -29,14 +29,35 @@
 
         <div class="form-group">
           <label>gender</label>
-          <input
+          <!-- <input
             type="text"
             [(ngModel)]="gender"
             [ngModelOptions]="{ standalone: true }"
-            class="form-control"
+            class="form-control custom-select-value"
             id="gender"
             placeholder="Enter Gender"
-          />
+          /> -->
+          <div class="form-select-list">
+            <select
+              class="form-control custom-select-value"
+              id="gender"
+              name="gender"
+              [(ngModel)]="gender"
+            >
+              <option *ngIf="!gender" selected disabled>
+                Pilih Jantina
+              </option>
+              <option [value]="'Male'" [selected]="gender === 'Male'">
+                Male
+              </option>
+              <option
+                [value]="'Female'"
+                [selected]="gender === 'Female'"
+              >
+                Female
+              </option>
+            </select>
+          </div>
         </div>
 
         <button type="submit" class="btn btn-primary mt-4" (click)="save()">
