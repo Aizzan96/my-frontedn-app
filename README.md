@@ -1,5 +1,7 @@
 # MyFrontednApp
 
+If you want it to work straight up download and work it with APITest in my github 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 
 ## Development server
